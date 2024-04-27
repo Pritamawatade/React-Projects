@@ -1,4 +1,4 @@
-#Thia is the git repo where i been upload my react learings .
+# Thia is the git repo where i been upload my react learings .
 ## Expense Tracker
 
 Welcome to my **Expense Tracker** project! 📊💸
