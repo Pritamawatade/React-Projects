@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Expenseitem from "./components/Expenseitem";
+import Expenses from "./components/Expenses";
 function App() {
   // let expenseDate = new Date(2024, 4, 27);
   // let ExpenseTitle = "School fee";
@@ -37,26 +37,7 @@ function App() {
   return (
     <div>
       <h2>Let's get started</h2>
-      <Expenseitem
-        date={ expenses[0].date }
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-      ></Expenseitem>
-      <Expenseitem
-        date={ expenses[1].date }
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-      ></Expenseitem>
-      <Expenseitem
-      date={ expenses[2].date }
-      title={expenses[2].title}
-      amount={expenses[2].amount}
-      ></Expenseitem>
-      <Expenseitem
-    date={ expenses[3].date }
-    title={expenses[3].title}
-    amount={expenses[3].amount}
-      ></Expenseitem>
+      <Expenses item={expenses} />
     </div>
     // video stop at 3 hr 49min
   );
