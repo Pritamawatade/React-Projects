@@ -1,4 +1,6 @@
 import "./Expenses.css";
+import React from 'react';
+
 import Expenseitem from "./Expenseitem";
 import Card from './Card';
 

@@ -1,4 +1,6 @@
 import "./Expenseitem.css";
+import React from 'react';
+
 import ExpenseDate from "./Expensedate.js";
 import Card from "./Card.js";
 function Expenseitem(props) {
