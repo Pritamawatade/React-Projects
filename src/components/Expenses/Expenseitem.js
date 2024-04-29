@@ -1,9 +1,12 @@
 import "./Expenseitem.css";
-import React from 'react';
+import React, { useState } from "react";
 
 import ExpenseDate from "./Expensedate.js";
 import Card from "../UI/Card.js";
-function Expenseitem(props) {
+
+const Expenseitem = (props) => {
+
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
@@ -13,6 +16,6 @@ function Expenseitem(props) {
       </div>
     </Card>
   );
-}
+};
 
 export default Expenseitem;

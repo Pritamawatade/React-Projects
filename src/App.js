@@ -1,7 +1,8 @@
 import "./App.css";
 import React from 'react';
+import NewExpense from "./components/Expenses/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
-function App() {
+const App = () => {
   // let expenseDate = new Date(2024, 4, 27);
   // let ExpenseTitle = "School fee";
   // let ExpenseAmount = 300;
@@ -36,8 +37,9 @@ function App() {
 
   return (
     <div>
-      <h2>Let's get started</h2>
-      <Expenses item={expenses} />
+      <NewExpense />
+     <Expenses item={expenses} />
+
     </div>
     // video stop at 3 hr 49min
   );
