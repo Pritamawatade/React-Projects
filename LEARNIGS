@@ -1,0 +1,18 @@
+ksprops  = way of passing the value in the react
+
+ todays react learining compiles is that
+ when importing the js file the .js extension is an optional
+ The component name is must start with capital letter
+ this is how the flow goes
+ first index.js we import the react component which is essentialy a js file which return the jsx code  file then that file is get render in the index.js file with the help of render function.
+ We create saparated file for each of the componet and css file for that component.
+We a create a parent folder to store the all component file.
+
+28 april 2024 9:00 pm 
+Learn to create a various react components and manage them. What is porps and more..
+
+props is the way to send or pass the data between the components props is object and it has it's propertes.children and props.className propertis.
+children propertis tells that under the component treat the children of that component like html.
+you can not directly two componts with each outher.
+
+video  : 4 h 23 min

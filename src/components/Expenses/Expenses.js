@@ -2,7 +2,7 @@ import "./Expenses.css";
 import React from 'react';
 
 import Expenseitem from "./Expenseitem";
-import Card from './Card';
+import Card from '../UI/Card';
 
 function Expenses(props) {
   return (

@@ -2,7 +2,7 @@ import "./Expenseitem.css";
 import React from 'react';
 
 import ExpenseDate from "./Expensedate.js";
-import Card from "./Card.js";
+import Card from "../UI/Card.js";
 function Expenseitem(props) {
   return (
     <Card className="expense-item">
