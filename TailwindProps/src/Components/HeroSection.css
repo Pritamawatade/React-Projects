@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.Header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+  
+}
+.heroContent{
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+}
+h1 {
+    font-family:roboto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 60px;
+ }
+.heroimg > img{
+    height: 503px;
+    width: 106%;
+    /* border-left: 12px solid transparent;
+    border-top-left-radius: 263px;
+    border-bottom-left-radius: 182px; */
+    
+}
+
+
+
+

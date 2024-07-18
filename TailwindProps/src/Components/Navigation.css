@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 10px;
+    background-color: #fff;
+    
+
+}
+ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+button{
+    all: unset;
+
+}
+
+img{
+    
+     width: 200px;
+
+}
+
+
+
+
+
+
+
