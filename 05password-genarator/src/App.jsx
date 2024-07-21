@@ -46,7 +46,7 @@ window.navigator.clipboard.writeText(password)
     <>
       <div>
         <h1 className='mg-4  py-4 text-white text-center bold text-xl'>Password Generator</h1>
-        <div className="w-full gap-9 flex max-w-md mx-auto shadow-md rounded px-4 py-4 my-8 text-orange-500 bg-gray-800 mb-4">
+        <div className="w-full gap-9 flex max-w-md mx-auto shadow-md rounded px-4 py-4  text-orange-500 bg-gray-800 mb-4">
           <input
             type="text"
             value={password} className='outline-none w-full py-1 px-3 rounded-lg'
@@ -56,7 +56,7 @@ window.navigator.clipboard.writeText(password)
           ref={passwordRef}
           onClick={copyPasswordToClipboard}
           className='bg-blue-700 outline-none
-           shrink-0 px-3 py-0.5 text-white'
+           shrink-1 rounded px-3 py-0.5 text-white '
           >Copy</button>
 
         </div>
@@ -101,3 +101,5 @@ window.navigator.clipboard.writeText(password)
 }
 
 export default App
+
+
