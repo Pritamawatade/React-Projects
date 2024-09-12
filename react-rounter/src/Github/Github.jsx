@@ -16,7 +16,7 @@ export const Github = () => {
     // },[])
   return (
 
-    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>Github foloowers: {data.followers}
+    <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>Github followers: {data.followers}
     <img className='text-center' src={data.avatar_url} alt="Git pic"  width={300}/>
     </div>
   )
