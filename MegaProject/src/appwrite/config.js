@@ -1,4 +1,4 @@
-import conf from "..conf";
+import conf from "../conf/conf.js";
 
 import { Client, ID, databases, Storage, Query } from "appwrite";
 
@@ -87,6 +87,8 @@ export class Service {
       console.log("appwrite service :: getPosts :: error", error);
     }
   }
+
+  // file upload 
   async fileUpload(file) {
     try {
       return this.bucket.createFile(conf.appwriteBucketId, ID.unique(), file);
