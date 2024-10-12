@@ -26,7 +26,7 @@ function App() {
     .finally(() =>{ setLoading(false); });
   }, [])
  return !loading ? (
-  <div>
+  <div className="bg-gray-400">
     <Header />
     <main>
       {/* TODO: install the tailwind and do some styling and see the getCurrentUser appwrite*/}
