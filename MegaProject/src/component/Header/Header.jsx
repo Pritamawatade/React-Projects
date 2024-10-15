@@ -40,7 +40,7 @@ function Header() {
         <nav className="flex">
           <div className="mr-4">
             <Link to='/'>
-              <Logo width="50px" />
+              <Logo width="70px" />
             </Link>
           </div>
           <ul className="flex ml-auto">
@@ -51,7 +51,7 @@ function Header() {
                   onClick={() => navigate(item.slug)}
                   className="text-white px-3 py-1 inline-block hover:bg-blue-100 rounded-full"
                   >
-
+                    {item.name}
                   </button>
                 </li>
               ) : null

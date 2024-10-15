@@ -19,37 +19,48 @@ function PostForm({post}) {
     });
 
     const navigate = useNavigate()
-    const userData = useSelector(state => state.auth.userData);
+    const userData = useSelector((state) => state.auth.userData);
     const submit  = async (data) =>{
         if(post){
-            const file = data.image[0] ? service.fileUpload(data.image[0]) : null;
+            const file = data.image[0] ? await service.fileUpload(data.image[0]) : null;
 
             if(file){
                 service.deleteFile(post.featuredImage)
             }
 
-            const dbPost = await service.updatePost(post.$id,{ ...data, 
-                featuredImage : file ? file.$id : undefined,
+            const dbPost = await service.updatePost(post.$id,{ 
+                ...data, 
+                featuredImage : file ? file.$id : undefined
 
             });
             if(dbPost){
                 navigate(`/post/${dbPost.$id}`)
             }
             
-        } else{
-            const file = data.image[0] ? service.fileUpload(data.image[0]) : null;
+        } 
+        else{
+            const file = await service.fileUpload(data.image[0]);
             if(file){
                 const fileId = file.$id;
                 data.featuredImage = fileId;
-
-                const dbPost = await service.createPost({
-                    ...data,
-                    userId:userData.$id,
-                })
+                //TODO: id issue in this line
+                let dbPost;
+              try {
+                 dbPost = await service.createPost({ ...data, userId: userData.$id });
+              } catch (error) {
+                  console.log(userData);
+                console.log("error in creating post", error);
+                
+                
+              }
                 if(dbPost){
                     navigate(`/post/${dbPost.$id}`)
                 }
 
+            }
+            else{
+                console.log("file is not sent correctly");
+                
             }
         }
 
@@ -70,11 +81,10 @@ function PostForm({post}) {
                 }))
             }
         }) 
-
-        return () =>{
-            subscription.unsubscribe()
-        }
+        return () => subscription.unsubscribe(); 
     }, [watch, slugTransform, setValue])
+
+
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
             <div className="w-2/3 px-2">
@@ -106,7 +116,7 @@ function PostForm({post}) {
                 {post && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
+                            src={service.getFilePreview(post.featuredImage)}
                             alt={post.title}
                             className="rounded-lg"
                         />

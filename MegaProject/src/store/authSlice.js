@@ -1,28 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState ={
+const initialState = {
     status : false,
-    userData : null
+    userData: null
 }
 
 const authSlice = createSlice({
-    name:'auth',
+    name: "auth",
     initialState,
-    reducers:{
-        login: (state, action) =>{
+    reducers: {
+        login: (state, action) => {
             state.status = true;
             state.userData = action.payload.userData;
         },
-        logout: (state) =>{
+        logout: (state) => {
             state.status = false;
             state.userData = null;
         }
-    }
-
-    
-
+     }
 })
-// login and logout are known as actions in redux which is present in the reducers
 
-export const {login , logout} = authSlice.actions;
+export const {login, logout} = authSlice.actions;
+
 export default authSlice.reducer;

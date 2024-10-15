@@ -1,6 +1,6 @@
 import conf from "../conf/conf.js";
 
-import { Client, ID, databases, Storage, Query } from "appwrite";
+import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 export class Service {
   client = new Client();
@@ -9,28 +9,30 @@ export class Service {
   constructor() {
     this.client.setEndpoint(conf.appwriteUrl);
     this.client.setProject(conf.appwriteProjectId);
-    this.databases = new databases(this.client);
+    this.databases = new Databases(this.client);
     this.bucket = new Storage(this.client);
   }
 
-  async createPost({ title, slug, content, featuredImage, status, userId }) {
+  
+  async createPost({title, slug, content, featuredImage, status, userId}){
     try {
-      return await this.databases.createDocument(
-        conf.appwriteDatabaseId,
-        conf.appwriteCollectionId,
-        slug,
-        {
-          title,
-          content,
-          featuredImage,
-          status,
-          userId,
-        }
-      );
+        return await this.databases.createDocument(
+            conf.appwriteDatabaseId,
+            conf.appwriteCollectionId,
+            slug,
+            {
+              title,
+              content,
+              
+              featuredImage,
+                status,
+                userId,
+            }
+        )
     } catch (error) {
-      console.log("appwrite service :: createPost :: error ", error);
+        console.log("Appwrite serive :: createPost :: error", error);
     }
-  }
+}
 
   async updatePost(slug, { title, content, featuredImage, status }) {
     try {
@@ -53,7 +55,7 @@ export class Service {
   async deletePost(slug) {
     try {
       await this.databases.deleteDocument(
-        cont.appwriteDatabaseId,
+        conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
         slug
       );
@@ -91,7 +93,7 @@ export class Service {
   // file upload 
   async fileUpload(file) {
     try {
-      return this.bucket.createFile(conf.appwriteBucketId, ID.unique(), file);
+      return await this.bucket.createFile(conf.appwriteBucketId, ID.unique(), file);
     } catch (error) {
       console.log("appwrite fileUpload :: error ::", error);
     }

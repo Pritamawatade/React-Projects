@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import service from "../appwrite/config";
 function EditPost() {
     const [post, setPosts] = useState(null)
-    const slug = useParams()
+    const {slug} = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {

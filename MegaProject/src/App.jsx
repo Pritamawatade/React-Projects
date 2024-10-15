@@ -26,15 +26,15 @@ function App() {
     .finally(() =>{ setLoading(false); });
   }, [])
  return !loading ? (
-  <div className="bg-gray-400">
+  <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+  <div className='w-full block'>
     <Header />
     <main>
-      {/* TODO: install the tailwind and do some styling and see the getCurrentUser appwrite*/}
       <Outlet />
-     
     </main>
     <Footer />
   </div>
+</div>
  ) : null
 }
 
