@@ -33,7 +33,7 @@ export class Service {
         console.log("Appwrite serive :: createPost :: error", error);
     }
 }
-
+// update the post 
   async updatePost(slug, { title, content, featuredImage, status }) {
     try {
       return await this.databases.updateDocument(
